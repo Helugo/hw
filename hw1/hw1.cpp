@@ -3,9 +3,8 @@
 using namespace std;
 
 void massiv(){
-	int len, value, min, condition=0;
+	int len, value, min, condition=0, mas[100];
 	cout << "Len >>> "; cin >> len; cout << "\n";
-	int *mas = new int[len];
 
 	for (int i = 0; i < len; i++) {
 		cout << "[" << i << "] >>> ";
@@ -21,8 +20,7 @@ void massiv(){
 		for (int i = 0; i < len; i++) { mas[i] -= min; }
 	}
 	cout << "\nsucc\n\n";
-	for (int i = 0; i < len; i++) { cout << "[" << i << "]=" << mas[i]; }
-	delete[] mas; system("pause");
+	for (int i = 0; i < len; i++) { cout << " [" << i << "]=" << mas[i]; }
 }
 
 void posl1() {
@@ -39,26 +37,16 @@ void posl1() {
 }
 
 void matrix() {
-	/*int len_y, len_x;
-	int **mat, *mas;
-	cout << " Y.len >>> "; cin >> len_y;
-	cout << " X.len >>> "; cin >> len_x;
-	mat = new int *[len_y];
-	mas = new int[len_y];
-	for (int i = 0; i < len_y; i++)
-		mat[i] = new int[len_x];
-	cout << "\n succ \n\n";*/
-
 	int const len_x = 3, len_y = 3;
-	int mas[len_y], mat[len_x][len_y], value;
+	int mas[len_y], mat[len_x][len_y];
 	for (int i = 0; i < len_y; i++) {
 		for (int j = 0; j < len_x; j++) {
-			cout << "m:: y=" << i + 1 << " x=" << j + 1 << " >>> "; cin >> mat[i][j];
+			cout << "m:: y=" << i + 1 << " x=" << j + 1 << " >>> "; 
+			cin >> mat[i][j];
 		}
 	}
 	for (int j = 0; j < len_y; j++) {
-		value = mat[0][j];
-		mas[j] = value;
+		mas[j] = mat[0][j];
 	}
 
 	cout << "\nsucc\n\n";
