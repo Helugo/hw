@@ -25,18 +25,17 @@ void massiv(){
 	delete[] mas; system("pause");
 }
 
-void posl() {
-	int len, value, pre_result=0, result=0;
-	bool alpha_condition=false, beta_condition=false, full_condition=false;
-	cout << " Len >>> "; cin >> len;
-	for (int i = 0; i < len; i++) {
-		cout << i << " >>> "; cin >> value;
-		if (value % 2 == 0) { alpha_condition = true; }
-		if (value < 0 && alpha_condition) { beta_condition = true; pre_result += value; }
-		if (value % 2 == 0 && beta_condition) { result += pre_result; beta_condition = false; }
+void posl1() {
+	int n, s = 0, A1 = NULL, A2 = NULL, A3 = NULL;
+	cout << "Len >>> "; cin >> n;
+	cout << "\n";
+	for (int i = 1; i < n + 1; i++) {
+		cout << i << " >>> "; cin >> A3;
+		if (i > 2 && (A1 % 2 == 0) && (A3 % 2 == 0) && A2 < 0) { s = +A2; }
+		A1 = A2; A2 = A3;
 	}
-	cout << "\n succ \n\n";
-	cout << " result: " << result << endl; system("pause");
+	cout << "\nsucc\n\n";
+	cout << "result: " << s << endl;
 }
 
 void matrix() {
@@ -78,7 +77,7 @@ int main() {
 	while (true) {
 		int r;
 		cout << "\n\n Ind - "; cin >> r;
-		if (r == 1) { cout << " posledovatel'nost' - " << endl; posl(); }
+		if (r == 1) { cout << " posledovatel'nost' - " << endl; posl1(); }
 		if (r == 2) { cout << " massiv" << endl; massiv(); }
 		if (r == 3) { cout << " matrica" << endl; matrix(); }
 	}
