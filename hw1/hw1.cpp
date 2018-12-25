@@ -67,12 +67,25 @@ void matrix() {
 
 }
 
+void lin() {
+	int n, result = 0, i_factor = 1, d_factor = 1;
+	cout << "N >>> "; cin >> n;
+	for (int i = 1; i <= n; i++) {
+		i_factor *= i; d_factor = i_factor * (i + 1) * (i +2);
+		result += ((3 * i + 1) * (3 * i + 1)) / d_factor;
+	}
+	cout << "R >>> " << result << endl;
+}
+
 int main() {
 	while (true) {
 		int r;
 		cout << "\n\nInd - "; cin >> r;
-		if (r == 1) { cout << "posledovatel'nost' - " << endl; posl1(); }
-		if (r == 2) { cout << "massiv" << endl; massiv(); }
-		if (r == 3) { cout << "matrica" << endl; matrix(); }
+		switch (r){
+		case 1: { cout << "posledovatel'nost' - " << endl; posl1(); }; break;
+		case 2: { cout << "massiv" << endl; massiv(); };               break;
+		case 3: { cout << "matrica" << endl; matrix(); };              break;
+		case 4: { cout << "riad" << endl; lin(); };					   break;
+		}
 	}
 }
